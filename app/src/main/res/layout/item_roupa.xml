@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/roupa_imagem"
@@ -21,7 +21,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="6dp"
-        android:text="Casaco"
+        android:text="Nome"
         app:layout_constraintStart_toEndOf="@+id/roupa_imagem"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,19 +29,20 @@
         android:id="@+id/roupa_tamanho"
         android:layout_width="130dp"
         android:layout_height="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:text="Tamanho"
         app:layout_constraintStart_toEndOf="@+id/roupa_imagem"
         app:layout_constraintTop_toBottomOf="@+id/roupa_nome" />
 
-    <view
-        android:id="@+id/view"
-        class="androidx.appcompat.widget.ActionMenuView"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
+    <TextView
+        android:id="@+id/roupa_preco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roupa_imagem" />
+        android:text="Preco"
+        app:layout_constraintStart_toEndOf="@+id/roupa_imagem"
+        app:layout_constraintTop_toBottomOf="@+id/roupa_tamanho" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

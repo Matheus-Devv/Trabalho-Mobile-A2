@@ -46,18 +46,21 @@ public class RoupasAdapter extends RecyclerView.Adapter<RoupasAdapter.RoupaViewH
         private ImageView imageView;
         private TextView textViewNome;
         private TextView textViewTamanho;
+        private TextView textViewPreco;
 
         public RoupaViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.roupa_imagem);
             textViewNome = itemView.findViewById(R.id.roupa_nome);
             textViewTamanho = itemView.findViewById(R.id.roupa_tamanho);
+            textViewPreco = itemView.findViewById(R.id.roupa_preco);
         }
 
         public void bind(Roupa roupa) {
             imageView.setImageDrawable(roupa.getDrawable());
             textViewNome.setText(roupa.getNome());
             textViewTamanho.setText(roupa.getTamanho());
+            textViewPreco.setText(roupa.getPreco().toString());
         }
     }
 }

@@ -8,11 +8,19 @@ public class Roupa {
 
     private String nome;
     private String tamanho;
+    private Double preco;
     private Drawable drawable;
 
     public Roupa(String nome, String tamanho, Drawable drawable) {
         this.nome = nome;
         this.tamanho = tamanho;
+        this.drawable = drawable;
+    }
+
+    public Roupa(String nome, String tamanho, Double preco, Drawable drawable) {
+        this.nome = nome;
+        this.tamanho = tamanho;
+        this.preco = preco;
         this.drawable = drawable;
     }
 
@@ -32,6 +40,14 @@ public class Roupa {
         this.tamanho = tamanho;
     }
 
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
     public Drawable getDrawable() {
         return drawable;
     }
@@ -44,7 +60,8 @@ public class Roupa {
     public String toString() {
         return "Roupa{" +
                 "nome='" + nome + '\'' +
-                ", tamanho=" + tamanho +
+                ", tamanho='" + tamanho + '\'' +
+                ", preco=" + preco +
                 '}';
     }
 

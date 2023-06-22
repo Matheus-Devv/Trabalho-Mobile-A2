@@ -34,9 +34,14 @@ public class GalleryFragment extends Fragment {
         // Configurar a lista de roupas
         listaRoupas = new ArrayList<>();
         // Adicionar roupas à lista
-        listaRoupas.add(new Roupa("Casaco", "GG", ResourcesCompat.getDrawable(getResources(), R.drawable.casaco, null)));
-        listaRoupas.add(new Roupa("Camisa", "M", ResourcesCompat.getDrawable(getResources(), R.drawable.camisa, null)));
-        listaRoupas.add(new Roupa("Calça", "G", ResourcesCompat.getDrawable(getResources(), R.drawable.calca, null)));
+        listaRoupas.add(new Roupa("Casaco", "GG",50.00, ResourcesCompat.getDrawable(getResources(), R.drawable.casaco, null)));
+        listaRoupas.add(new Roupa("Camisa", "M",50.00, ResourcesCompat.getDrawable(getResources(), R.drawable.camisa, null)));
+        listaRoupas.add(new Roupa("Calça", "G",50.00, ResourcesCompat.getDrawable(getResources(), R.drawable.calca, null)));
+        listaRoupas.add(new Roupa("Calça", "G",50.00, ResourcesCompat.getDrawable(getResources(), R.drawable.calca, null)));
+        listaRoupas.add(new Roupa("Calça", "G",50.00, ResourcesCompat.getDrawable(getResources(), R.drawable.calca, null)));
+        listaRoupas.add(new Roupa("Calça", "G",50.00, ResourcesCompat.getDrawable(getResources(), R.drawable.calca, null)));
+        listaRoupas.add(new Roupa("Calça", "G",50.00, ResourcesCompat.getDrawable(getResources(), R.drawable.calca, null)));
+        listaRoupas.add(new Roupa("Calça", "G",50.00, ResourcesCompat.getDrawable(getResources(), R.drawable.calca, null)));
 
         // Configurar o RecyclerView
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
