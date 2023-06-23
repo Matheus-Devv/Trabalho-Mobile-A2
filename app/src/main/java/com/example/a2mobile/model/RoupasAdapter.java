@@ -4,24 +4,35 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a2mobile.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RoupasAdapter extends RecyclerView.Adapter<RoupasAdapter.RoupaViewHolder> {
 
     private Context context;
-    private List<Roupa> listaRoupas;
+    private  List<Roupa> listaRoupas;
+    public  List<Roupa> listaRoupasSelecionadas;
+    private RecyclerView recyclerView;
 
-    public RoupasAdapter(Context context, List<Roupa> listaRoupas) {
+    public RoupasAdapter() {
+    }
+
+    public RoupasAdapter(Context context, List<Roupa> listaRoupas, RecyclerView recyclerView) {
         this.context = context;
         this.listaRoupas = listaRoupas;
+        this.listaRoupasSelecionadas = new ArrayList<>();
+        this.recyclerView = recyclerView; // Atribua a referência do RecyclerView
     }
 
     @NonNull
@@ -33,12 +44,26 @@ public class RoupasAdapter extends RecyclerView.Adapter<RoupasAdapter.RoupaViewH
 
     @Override
     public void onBindViewHolder(@NonNull RoupaViewHolder holder, int position) {
-        Roupa roupa = listaRoupas.get(position);
+        final int adapterPosition = position;
+        Roupa roupa = listaRoupas.get(adapterPosition);
         holder.bind(roupa);
+
+        holder.itemView.setSelected(listaRoupasSelecionadas.contains(roupa));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleSelecao(adapterPosition);
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
+        if (listaRoupas == null) {
+            return 0;
+        }
         return listaRoupas.size();
     }
 
@@ -62,5 +87,22 @@ public class RoupasAdapter extends RecyclerView.Adapter<RoupasAdapter.RoupaViewH
             textViewTamanho.setText(roupa.getTamanho());
             textViewPreco.setText(roupa.getPreco().toString());
         }
+
     }
+
+    public void toggleSelecao(int position) {
+        Roupa roupa = listaRoupas.get(position);
+        if (listaRoupasSelecionadas.contains(roupa)) {
+            listaRoupasSelecionadas.remove(roupa);
+        } else {
+            listaRoupasSelecionadas.add(roupa);
+        }
+        notifyItemChanged(position);
+    }
+
+
+    public List<Roupa> getListaRoupasSelecionadas() {
+        return listaRoupasSelecionadas;
+    }
+
 }

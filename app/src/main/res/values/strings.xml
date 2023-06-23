@@ -10,4 +10,7 @@
     <string name="menu_home">Boas Vindas</string>
     <string name="menu_gallery">Shop</string>
     <string name="menu_slideshow">Contatos</string>
+    <string name="menu_carrinho">Carrinho</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
