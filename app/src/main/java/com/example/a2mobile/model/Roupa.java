@@ -2,26 +2,36 @@ package com.example.a2mobile.model;
 
 import android.graphics.drawable.Drawable;
 
+import org.parceler.Parcel;
+
 import java.util.Objects;
 
+@Parcel
 public class Roupa {
 
     private String nome;
     private String tamanho;
     private Double preco;
-    private Drawable drawable;
+//    private Drawable drawable;
+    private int drawableResId;
 
-    public Roupa(String nome, String tamanho, Drawable drawable) {
-        this.nome = nome;
-        this.tamanho = tamanho;
-        this.drawable = drawable;
-    }
 
-    public Roupa(String nome, String tamanho, Double preco, Drawable drawable) {
+    public Roupa(String nome, String tamanho, Double preco, int drawableResId) {
         this.nome = nome;
         this.tamanho = tamanho;
         this.preco = preco;
-        this.drawable = drawable;
+        this.drawableResId = drawableResId;
+    }
+
+    public Roupa() {
+    }
+
+    public int getDrawableResId() {
+        return drawableResId;
+    }
+
+    public void setDrawableResId(int drawableResId) {
+        this.drawableResId = drawableResId;
     }
 
     public String getNome() {
@@ -46,14 +56,6 @@ public class Roupa {
 
     public void setPreco(Double preco) {
         this.preco = preco;
-    }
-
-    public Drawable getDrawable() {
-        return drawable;
-    }
-
-    public void setDrawable(Drawable drawable) {
-        this.drawable = drawable;
     }
 
     @Override

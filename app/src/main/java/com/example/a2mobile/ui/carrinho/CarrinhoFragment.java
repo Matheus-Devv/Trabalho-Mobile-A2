@@ -13,13 +13,14 @@ import com.example.a2mobile.R;
 import com.example.a2mobile.model.Roupa;
 import com.example.a2mobile.model.RoupasAdapter;
 
+import org.parceler.Parcels;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CarrinhoFragment extends Fragment {
 
     private RoupasAdapter roupasAdapter;
-
     private List<Roupa> listaRoupasSelecionadas;
 
     @Override
@@ -32,7 +33,7 @@ public class CarrinhoFragment extends Fragment {
         // Obter a lista de roupas selecionadas do Bundle de argumentos
         Bundle arguments = getArguments();
         if (arguments != null) {
-            listaRoupasSelecionadas = arguments.getParcelableArrayList("listaRoupasSelecionadas");
+            listaRoupasSelecionadas = Parcels.unwrap(arguments.getParcelable("listaRoupasSelecionadas"));
         } else {
             listaRoupasSelecionadas = new ArrayList<>();
         }
@@ -42,5 +43,4 @@ public class CarrinhoFragment extends Fragment {
 
         return rootView;
     }
-
 }

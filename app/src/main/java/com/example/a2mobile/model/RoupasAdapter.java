@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -82,7 +83,7 @@ public class RoupasAdapter extends RecyclerView.Adapter<RoupasAdapter.RoupaViewH
         }
 
         public void bind(Roupa roupa) {
-            imageView.setImageDrawable(roupa.getDrawable());
+            imageView.setImageDrawable(ContextCompat.getDrawable(context, roupa.getDrawableResId()));
             textViewNome.setText(roupa.getNome());
             textViewTamanho.setText(roupa.getTamanho());
             textViewPreco.setText(roupa.getPreco().toString());
