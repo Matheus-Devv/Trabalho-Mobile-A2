@@ -1,7 +1,5 @@
 package com.example.a2mobile.model;
 
-import android.graphics.drawable.Drawable;
-
 import org.parceler.Parcel;
 
 import java.util.Objects;
@@ -12,7 +10,7 @@ public class Roupa {
     private String nome;
     private String tamanho;
     private Double preco;
-//    private Drawable drawable;
+    //    private Drawable drawable;
     private int drawableResId;
 
 
